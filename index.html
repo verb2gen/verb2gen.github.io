@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Benchmarks for the development of LLM-RL algorithms">
+  <meta name="keywords" content="LLM-RL, benchmarks">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LMRL Gym: Benchmarks for Multi-Turn Reinforcement Learning with Language Models</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/robot.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://abdulhaim.github.io/">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">LMRL Gym: Benchmarks for Multi-Turn Reinforcement Learning with Language Models</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://abdulhaim.github.io/">Marwa Abdulhai</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/isadora-c-white">Isadora White</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://sea-snell.github.io/">Charlie Snell</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://charlesjsun.github.io/">Charles Sun</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://jxihong.github.io/joeyhong/">Joey Hong</a><sup>1</sup>,
+            </span>
+            <br>
+            <span class="author-block">
+              <a href="https://yx-s-z.github.io/">Yuexiang Zhai</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://kelvinxu.github.io/">Kelvin Xu</a><sup>2</sup>
+            </span>
+            <span class="author-block">
+              <a href="https://people.eecs.berkeley.edu/~svlevine/">Sergey Levine</a><sup>1,2</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of California, Berkeley,</span>
+            <span class="author-block"><sup>2</sup>Google DeepMind</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2311.18232"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/abdulhaim/LMRL-Gym"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://rail.eecs.berkeley.edu/datasets/rl-llm-bench-dataset"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+              </span>
+              <!-- BibTex Link. -->
+              <span class="link-block">
+                <a href="./static/lmrl.bib"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fas fa-quote-left"></i> </span>
+                    <span>BibTex</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/llm_rl_dialogs.png" alt="Teaser Image" style="height: 100%; width: 100%;" />
+      <h2 class="subtitle has-text-centered">
+        <br>
+        Sample tasks from <span class="dnerf">LMRL-Gym</span> benchmark for the development of RL algorithms for language
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/images/motivation_benchmarks.png"
+                    type="video/mp4">
+          </video>
+        </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+
+
+          <p>
+            Our paper introduces the LMRL-Gym benchmark for evaluating multi-turn RL for LLMs, together with an open-source research framework containing a basic toolkit for getting started on multi-turn RL with offline value-based and policy-based RL methods. 
+           The motivation behind our work is particularly apparent in multi-turn conversations: even the best current LLMs rarely ask clarifying questions, engage in explicit information gathering, or take actions now that lead to better decisions after multiple turns. 
+          Reinforcement learning has the potential to leverage the powerful modeling capabilities of LLMs, as well as their internal representation of textual interactions, to create capable goal-directed language agents. This can enable intentional and temporally extended interactions, such as with humans, through coordinated persuasion and carefully crafted questions, or in goal-directed play through text games to bring about desired final outcomes. 
+          Our contributions are: 
+
+          <div class="content has-text-justified">
+            <p>
+              Our paper introduces the LMRL-Gym benchmark for evaluating multi-turn RL for LLMs, together with an open-source research framework containing a basic toolkit for getting started on multi-turn RL with offline value-based and policy-based RL methods. 
+              The motivation behind our work is particularly apparent in multi-turn conversations: even the best current LLMs rarely ask clarifying questions, engage in explicit information gathering, or take actions now that lead to better decisions after multiple turns. 
+            </p>
+            <ul>
+              <li> Eight different language tasks which require multiple rounds of language interaction and cover a range of tasks in open-ended dialogue and text games. Each task has both an online simulator and offline datasets avaliable for training.</li>
+              <li> Stable and reliable research framework with reinforcement learning algorithms that can effectively train LLMs. </li>
+              <li> Methodology for synthetic data generation system to create further datasets for RL-LLM algorithm development</li>
+              <li> Design of tasks that isolate specific RL capabilities to test success of algorithms</li>
+
+            </ul>
+          </div>
+
+         <div class="content has-text-justified">
+          <p>
+            A central objective of our benchmark is to evaluate the core capabilities that RL can enable in large language models. Some of these capabilities are <em>computational</em>, and relate to core decision making irrespective of the considerations of natural language, such as playing chess, while others are semantic. These include: 
+          </p>
+          <ul>
+            <li><strong>Strategic decision making:</strong> RL shines in goal-directed tasks that require multi-step planning and strategic decision making, such as follow-up questions to gather information (e.g., in the 20 Questions task), to complex strategy in chess. </li>
+            <li><strong>Complex language:</strong> Our benchmark includes realistic language and interaction scenarios, with the aim of necessitating LLMs to combine knowledge from pretraining with task-specific patterns learned during finetuning.</li>
+            <li><strong>Credit assignment:</strong> As rewards are often delayed relative to the action that was pivotal to the outcome, we evaluate the ability of RL algorithms to determine trajectories that lead to good outcomes, and reinforce them.</li>
+            <li><strong>Partial observability:</strong> For language tasks, the state consists of the entire history of tokens, and an agent may need to examine this entire context to infer the correct state. This is tested through algorithms learning the mental states of the speaker (e.g., whether the buyer is impatient in a selling task) or previously observed facts in a guessing game. </li>
+            <li><strong>Trajectory stitching:</strong> It is necessary for algorithms to learn how to join optimal actions from different suboptimal trajectories together to form the most optimal trajectory</li>
+          </ul>
+        </div>
+
+        </div>
+      </div>
+    </div>
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Evaluating Capabilities Enabled by RL</h2>
+            <div class="capabilities-image">
+              <img src="static/images/properties_table.png" alt="LMRL-Gym Tasks Image" style="width: 100%; height: auto;">
+            </div>
+            <div class="content has-text-justified">
+              <p>
+                A central objective of our benchmark is to evaluate the core capabilities that RL can enable in large language models. Some of these capabilities are <em>computational</em>, and relate to core decision making irrespective of the considerations of natural language, such as playing chess, while others are semantic. These include: 
+              </p>
+              <ul>
+                <li><strong>Strategic decision making:</strong> RL shines in goal-directed tasks that require multi-step planning and strategic decision making, such as follow-up questions to gather information (e.g., in the 20 Questions task), to complex strategy in chess. </li>
+                <li><strong>Complex language:</strong> Our benchmark includes realistic language and interaction scenarios, with the aim of necessitating LLMs to combine knowledge from pretraining with task-specific patterns learned during finetuning.</li>
+                <li><strong>Credit assignment:</strong> As rewards are often delayed relative to the action that was pivotal to the outcome, we evaluate the ability of RL algorithms to determine trajectories that lead to good outcomes, and reinforce them.</li>
+                <li><strong>Partial observability:</strong> For language tasks, the state consists of the entire history of tokens, and an agent may need to examine this entire context to infer the correct state. This is tested through algorithms learning the mental states of the speaker (e.g., whether the buyer is impatient in a selling task) or previously observed facts in a guessing game. </li>
+                <li><strong>Trajectory stitching:</strong> It is necessary for algorithms to learn how to join optimal actions from different suboptimal trajectories together to form the most optimal trajectory</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  
+
+    <section class="hero">
+      <!-- Paper motivation. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Tasks in LMRL-Gym Benchmark</h2>
+          <div class="publication-image">
+            <img src="static/images/tasks.png" alt="LMRL-Gym Tasks Image" style="width: 100%; height: auto;">
+          </div>
+          <br>
+          We feature sample trials from the tasks above. Each task requires the agent to perform a multi-turn interaction with an environment -- either a text game or another LLM simulating a human speaker.</p>
+      </div>
+      </div>
+    </section>
+    <br>
+    <br>
+
+    
+    <section class="hero">
+      <!-- Paper motivation. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="publication-image">
+            <img src="static/images/motivation_benchmarks.png" alt="LMRL-Gym Tasks Image" style="width: 50%; height: auto;">
+          </div>
+          To generate data for conversational tasks, we use LLMs as "simulators" for the task, serving to generate offline data, to provide a simulation environment for evaluation and online training, and to compute rewards.</p>
+      </div>
+      </div>
+    </section>
+
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Our Results</h2>
+            <div class="results-image">
+              <img src="static/images/results.png" alt="LMRL-Gym Tasks Image" style="width: 50%; height: auto;">
+            </div>
+            <div class="content has-text-justified">
+              <p>
+                We evaluate our tasks on a set of both online and offline RL algorithms. To make the results more comparable across tasks, we normalize the average return for each policy such that 0 is the minimum possible return, 50 is the dataset average return, and 100 is the maximum return for each task. We also report the raw score results and evaluation details in our Appendix.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{abdulhai2023lmrl,
+  author    = {Abdulhai, Marwa and White, Isadora and Snell, Charlie and Sun, Charles and Hong, Joey and Zhai, Yuexiang and Xu, Kelvin and Levine, Sergey},
+  title     = {LMRL Gym: Benchmarks for Multi-Turn Reinforcement Learning with Language Models},
+  year      = {2023},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/abdulhaim" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
